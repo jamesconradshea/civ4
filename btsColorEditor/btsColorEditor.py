@@ -1,4 +1,4 @@
-q#!/usr/bin/python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 # Copyright © 2010-2017 by James Conrad Shea (Duckstab)
