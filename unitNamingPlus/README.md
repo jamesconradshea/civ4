@@ -2,7 +2,7 @@ Copyright © 2018 by James Conrad Shea (duckstab)
 This software is made available under the terms of the Creative Commons 
 Attribution-NonCommercial-ShareAlike 3.0 License
 See
-	http://creativecommons.org/licenses/by-nc-sa/2.0/legalcode
+	http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
 for full terms. 
 
 # Description
