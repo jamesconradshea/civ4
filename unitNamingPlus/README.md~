@@ -15,17 +15,17 @@ with various BUG-compatible mods such as BAT, K-Mod, and
 RevoluctionDCM. 
 
 Features include:
-* Custom naming code for all of the civs in BtS. I've
-  made an effort to be faithful to the naming customs of
-  each civ where known.
-* Support for the ^nav^ unit naming convention for naval
-  units. For some civs this draws ship names from
-  historical lists of the corresponding
-  navies. Otherwise it behaves like the ^rc^
-  convention. 
-* Female names are generated for missionaries and
-  executives for mods such as BAT that create such
-  units. 
+	 * Custom naming code for all of the civs in BtS. I've
+	   made an effort to be faithful to the naming customs of
+	   each civ where known.
+	 * Support for the ^nav^ unit naming convention for naval
+	   units. For some civs this draws ship names from
+	   historical lists of the corresponding
+	   navies. Otherwise it behaves like the ^rc^
+	   convention. 
+	 * Female names are generated for missionaries and
+	   executives for mods such as BAT that create such
+	   units. 
 
 # Installation
 
