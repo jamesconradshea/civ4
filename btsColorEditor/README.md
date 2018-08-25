@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-Copyright © 2010-2017 by James Conrad Shea (duckstab)
+Copyright © 2010-2018 by James Conrad Shea (duckstab)
 This software is made available under the terms of the Creative Commons 
 Attribution-NonCommercial-ShareAlike 2.0 License
 See
@@ -9,7 +7,7 @@ for full terms.
 
 # Description
 
-**BtS Color Editor v. 2.0.1**
+**BtS Color Editor v. 2.0.2**
 
 This is a simple player color editor for Civ 4 Beyond the
 Sword. It allows you to set the primary, secondary, and text
