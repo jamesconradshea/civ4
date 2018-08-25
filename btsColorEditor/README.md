@@ -36,11 +36,11 @@ back up your CustomAssets folder first.
 # Running
 
 1) Run btsColorEditor.py with python.exe. Normally the Python
-   installer will register itself to open Python files so you can
+   installer will register python.exe to open Python files so you can
    probably just double-click. This will back up your existing
-   color definitions to CIV4PlayerColorInfos.xml-orig and
-   CIV4ColorVals.xml-orig, just in case you need to get them
-   back. Note that CIV4PlayerColorInfos.xml and CIV4ColorVals.xml
+   color definitions to CIV4PlayerColorInfos.xml-orig, 
+   CIV4ColorVals.xml-orig, and Civ4CivilizationInfos.xml-orig, 
+   just in case you need to get them back. Note that these
    are the only files the editor writes.
 2) To edit the colors for each civ, just click on the colored
    buttons next to their names. When done, click "Save".
@@ -85,7 +85,7 @@ back up your CustomAssets folder first.
   shares the color white with England but the color set name as
   well, and this wasn't easy to work around.
 * When the leader splash screen pops up you'll see the original
-  colors for the flag icons. They're probably images not
+  colors for the flag icons. That's becaause they're images not
   generated from the XML.
 
 # Giving feedback
