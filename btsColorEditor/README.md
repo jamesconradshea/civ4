@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-Copyright © 2010-2017 by James Conrad Shea (duckstab)
+Copyright © 2010-2018 by James Conrad Shea (duckstab)
 This software is made available under the terms of the Creative Commons 
 Attribution-NonCommercial-ShareAlike 2.0 License
 See
