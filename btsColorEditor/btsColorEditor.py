@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright © 2010-2017 by James Conrad Shea (Duckstab)
+# Copyright © 2010-2018 by James Conrad Shea (Duckstab)
 # This software is made available under the terms of the Creative Commons 
 # Attribution-NonCommercial-ShareAlike 2.0 License
 # See
@@ -485,7 +485,9 @@ class CivInfo:
             direc = path.join(COLOR_EDITOR_CUSTOM_ASSETS, "XML/Civilizations")
             if (not path.exists(direc)):
                 makedirs(direc)
-            shutil.copy(filename, path.join(COLOR_EDITOR_CUSTOM_ASSETS, self.relpath + "-orig"))
+            backup = path.join(COLOR_EDITOR_CUSTOM_ASSETS, self.relpath + "-orig")
+            if (not path.exists(backup)):
+                shutil.copy(filename, backup)
             self.document = parseXmlFile(filename)
             self.documentMap = XmlMap(self.document, "CivilizationInfo", "Type")
         self.renamedColors = dict()
