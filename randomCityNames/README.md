@@ -26,7 +26,7 @@ Barbarian city names are generated from civs that are not in the current
 game. If you're playing a game using an enhanced DLL that allows all 
 civs to be active, this will probably cause issues.
 
-**New in 1.1: **
+**New in 1.1:**
 
 * Ensure that state is persisted across sessions.
 * When a city is conquered, a new name will be generated based on the old name, but compatible with the names of the conquering civ. On reconquest, the old name is restored.
