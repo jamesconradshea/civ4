@@ -7,7 +7,7 @@ for full terms.
 
 # Description
 
-**BtS Color Editor v. 2.0.2**
+**BtS Color Editor v. 2.1**
 
 This is a simple player color editor for Civ 4 Beyond the
 Sword. It allows you to set the primary, secondary, and text
