@@ -7,7 +7,7 @@ for full terms.
 
 # Description
 
-**Unit Naming Plus 1.0**
+**Unit Naming Plus 1.0.1-beta1**
 
 This modcomp is a partial refactoring and enhancement of the unit
 naming code used in the BUG mod. I have been able to merge it
@@ -35,9 +35,8 @@ Features include:
 
 # Notes 
 
-* This version only names units for the player's civ in single
-  player. I have a version that names units for all civs but it
-  breaks multiplayer so I'm not releasing that yet.
+* New in 1.0.1-beta1:
+  * Attempted fix at multiplayer bug. I tested with hotseat only but I am cautiously optimistic this will make the modcomp multiplayer-compatible.
 
 # Giving feedback
 
