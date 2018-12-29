@@ -844,6 +844,7 @@ class CvEventManager:
 	def onCityAcquired(self, argsList):
 		'City Acquired'
 		iPreviousOwner,iNewOwner,pCity,bConquest,bTrade = argsList
+		pCity.setName(RandomCityNames.rename(pCity, iPreviousOwner, iNewOwner), False)
 		CvUtil.pyPrint('City Acquired Event: %s' %(pCity.getName()))
 	
 	def onCityAcquiredAndKept(self, argsList):

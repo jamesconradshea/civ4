@@ -8,13 +8,14 @@ for full terms.
 
 # Description
 
-**Random City Names 1.0**
+**Random City Names 1.1**
 
 This modcomp generates random city names for all the regular civs
-in BtS as well as the barbarians. I have been able to merge it
-with the following mods:
+in BtS as well as the barbarians. Genrally speaking, it should be easy to merge with any BUG-based mod. I have been able to merge it with the following:
 * BAT 4.1
 * K-Mod
+
+Note that it will *not* work with unmodded BtS. The core BUG mod code must at least be present.
      
 City names are generated using a Markov Chain algorithm, using city 
 name lists that are found in Assets/Python/Contrib/CityNameLists.py. 
@@ -24,6 +25,11 @@ something inappropriate or offensive. Use, or not, at your discretion.
 Barbarian city names are generated from civs that are not in the current
 game. If you're playing a game using an enhanced DLL that allows all 
 civs to be active, this will probably cause issues.
+
+**New in 1.1:**
+
+* Ensure that state is persisted across sessions.
+* When a city is conquered, a new name will be generated based on the old name, but compatible with the names of the conquering civ. On reconquest, the old name is restored.
 
 # Installation
 
