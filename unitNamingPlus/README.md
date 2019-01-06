@@ -1,4 +1,4 @@
-Copyright © 2018 by James Conrad Shea (duckstab)
+Copyright (C) 2018-2019 by James Conrad Shea (duckstab)
 This software is made available under the terms of the Creative Commons 
 Attribution-NonCommercial-ShareAlike 3.0 License
 See
@@ -7,7 +7,7 @@ for full terms.
 
 # Description
 
-**Unit Naming Plus 1.0.1-beta1**
+**Unit Naming Plus 2.0**
 
 This modcomp is a partial refactoring and enhancement of the unit
 naming code used in the BUG mod. I have been able to merge it
@@ -25,7 +25,7 @@ Features include:
   convention. 
 * Female names are generated for missionaries and
   executives for mods such as BAT that create such
-  units. 
+  units.
 
 # Installation
 
@@ -35,8 +35,13 @@ Features include:
 
 # Notes 
 
+* New in 2.0
+  * When using the ^rc^ or ^nav^ unit naming convention, barbarian units, spies, and privateers will have their names
+    taken from a randomly-chosen civ, an inactive one if possible. In the case of spies and privateers this is obviously
+    to prevent their nationality from being revealed by their name.
 * New in 1.0.1-beta1:
-  * Attempted fix at multiplayer bug. I tested with hotseat only but I am cautiously optimistic this will make the modcomp multiplayer-compatible.
+  * Attempted fix at multiplayer bug. I tested with hotseat only but I am cautiously optimistic this will make the 
+    modcomp multiplayer-compatible.
 
 # Giving feedback
 

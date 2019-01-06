@@ -21,7 +21,8 @@ import BugUtil
 
 from Markov import *
 
-gc = CyGlobalContext()  
+gc = CyGlobalContext()
+gRandom = gc.getASyncRand()
 
 def getDataValue(key):
 	counters = BugData.getGameData().getTable("RandomNameUtils")
@@ -43,7 +44,7 @@ def setDataValue(key, value):
 class Generator(object):
 
 	def __init__(self, mFirst, fFirst, mMiddle, fMiddle, last):
-		self.random = gc.getASyncRand()
+		self.random = gRandom
 		self.masculineFirstNames = mFirst
 		self.feminineFirstNames = fFirst
 		self.masculineMiddleNames = mMiddle
@@ -78,7 +79,6 @@ class Generator(object):
 		active_generators = getDataValue("ACTIVE_GENERATORS") or {}
 		active_generators[self.civ] = True
 		setDataValue("ACTIVE_GENERATORS", active_generators)
-
 
 class ArabianGenerator(Generator):
 
@@ -2777,7 +2777,7 @@ class NativeAmericanGenerator(MarkovGenerator):
 
 		secondName = ""
 		while (len(secondName) < self.minlen):
-			secondName = mcf.newName
+			secondName = mcf.newName()
 
 		return firstName + " " + secondName
 
@@ -3843,9 +3843,7 @@ class BarbarianGenerator(Generator):
 		super(BarbarianGenerator, self).__init__([], [], [], [], [])
 
 	def generate(self, pUnit, pCity, masculine):
-		active_generators = getDataValue("ACTIVE_GENERATORS") or {}
-		civs = [civ for civ in GENERATORS.keys() if civ not in active_generators.keys()]
-		civ = self.choice(civs)
+		civ = getRandomCiv()
 		delegate = GENERATORS[civ]
 		return delegate.generate(pUnit, pCity, masculine)
 
@@ -4073,13 +4071,15 @@ civilizationNameHash =  {
 							},
 						}
 
-
-
 def getRandomCivilizationName0(iCivilizationType, pUnit, pCity, masculine):
 	unitName = ""
 
 	if(gc.getCivilizationInfo(iCivilizationType) != None):
 		strCivilizationType = gc.getCivilizationInfo(iCivilizationType).getType()
+
+	unitClass = gc.getUnitClassInfo(pUnit.getUnitClassType()).getType()
+	if "UNITCLASS_SPY" == unitClass:
+		strCivilizationType = getRandomCiv()
 
 	BugUtil.debug("getRandomCivilizationName(%s, %s, %s, %s):%s" % (iCivilizationType, pUnit, pCity, masculine, strCivilizationType))
 	if (GENERATORS.has_key(strCivilizationType)):
@@ -4163,3 +4163,20 @@ def getRandomName():
 
 
 	return unitName
+
+def getInactiveCivs():
+	active_generators = getDataValue("ACTIVE_GENERATORS") or {}
+	return [civ for civ in GENERATORS.keys() if (civ not in active_generators.keys() and "CIVILIZATION_BARBARIAN" != civ)]
+
+def getActiveCivs():
+	active_generators = getDataValue("ACTIVE_GENERATORS") or {}
+	return [civ for civ in GENERATORS.keys() if (civ in active_generators.keys() and "CIVILIZATION_BARBARIAN" != civ)]
+
+def getRandomCiv():
+	list = getInactiveCivs()
+	if len(list) == 0:
+		list = getActiveCivs()
+	return list[gRandom.get(len(list), "getRandomCiv")]
+
+def getHiddenNationalityName(pUnit, pCity, bMasculine):
+	return GENERATOR_BARBARIAN.generate(pUnit, pCity, bMasculine)
