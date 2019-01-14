@@ -1,4 +1,4 @@
-Copyright &copy; 2018 by James Conrad Shea (duckstab)
+Copyright &copy; 2018-2019 by James Conrad Shea (duckstab)
 Except as otherwise noted in specific files, this software is
 made available under the terms of the Creative Commons
 Attribution-NonCommercial-ShareAlike 3.0 License 
