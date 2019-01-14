@@ -8,7 +8,7 @@ for full terms.
 
 # Description
 
-**Random City Names 1.1**
+**Random City Names 1.1.1**
 
 This modcomp generates random city names for all the regular civs
 in BtS as well as the barbarians. Genrally speaking, it should be easy to merge with any BUG-based mod. I have been able to merge it with the following:
@@ -25,6 +25,9 @@ something inappropriate or offensive. Use, or not, at your discretion.
 Barbarian city names are generated from civs that are not in the current
 game. If you're playing a game using an enhanced DLL that allows all 
 civs to be active, this will probably cause issues.
+
+**New in 1.1.1:**
+* Small bug fix involving white space in training sets.
 
 **New in 1.1:**
 
