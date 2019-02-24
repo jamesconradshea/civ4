@@ -64,7 +64,7 @@ class MarkovChain:
 		prefix = unicode("_" * self.chainlen)
 		name = u""
 		basis = oldname
-		while True:
+		for i in xrange(2 * self.maxlen):
 			suffix = None
 			if len(basis) > 0:
 				key = tuple([c for c in prefix])
@@ -76,12 +76,20 @@ class MarkovChain:
 							basis = basis[i+1:]
 							break
 			if suffix is None:
-			suffix = self.mcd.get_suffix(prefix)
+				suffix = self.mcd.get_suffix(prefix)
 			if suffix == "\n" or len(name) > self.maxlen:
 				break
 			else:
-				name = name + suffix
+				name = self.dedup(name + suffix)
 				prefix = prefix[1:] + suffix
 		return name
+
+	def dedup(self, s):
+		l = len(s)
+		if l % 2 == 0:
+			l2 = l/2
+			if s[0:l2] == s[l2:]:
+				return s[l2:]
+		return s
 
 

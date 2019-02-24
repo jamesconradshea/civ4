@@ -21,6 +21,7 @@ import CvWorldBuilderScreen
 import CvAdvisorUtils
 import CvTechChooser
 import RandomCityNames
+import RandomNameUtils
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -57,7 +58,7 @@ class CvEventManager:
 		self.__LOG_CITYLOST = 0
 		self.__LOG_CITYBUILDING = 0
 		self.__LOG_TECH = 0
-		self.__LOG_UNITBUILD = 0
+		self.__LOG_UNITBUILD = 1
 		self.__LOG_UNITKILLED = 1
 		self.__LOG_UNITLOST = 0
 		self.__LOG_UNITPROMOTED = 0

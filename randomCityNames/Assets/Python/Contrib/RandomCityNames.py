@@ -59,9 +59,7 @@ class Generator(object):
 		return res
 
 	def generate(self, previous_name=""):
-		active_generators = rcnGetDataValue("ACTIVE_GENERATORS") or {}
-		active_generators[self.civ] = True
-		rcnSetDataValue("ACTIVE_GENERATORS", active_generators)
+		self.activate()
 		result = ""
 		# loopcount guarantees termination
 		loopcount = 0
@@ -69,6 +67,13 @@ class Generator(object):
 			result = self.markov_chain.newName(previous_name)
 			loopcount = loopcount + 1
 		return self.customize(result)
+
+	def activate(self):
+		active_generators = rcnGetDataValue("ACTIVE_GENERATORS") or {}
+		maxActive = 1 + gc.getGame().countCivPlayersEverAlive()
+		if len(active_generators) < maxActive:
+			active_generators[self.civ] = True
+			rcnSetDataValue("ACTIVE_GENERATORS", active_generators)
 
 	def choice(self, l):
 		return l[self.random.get(len(l), "Generator.choice")]
@@ -279,13 +284,18 @@ class BarbarianGenerator(Generator):
 		super(BarbarianGenerator, self).__init__(civ, [])
 
 	def generate(self, previous_name=""):
-		active_generators = rcnGetDataValue("ACTIVE_GENERATORS") or {}
-		active_generators[self.civ] = True
-		rcnSetDataValue("ACTIVE_GENERATORS", active_generators)
-		civs = [civ for civ in GENERATORS.keys() if civ not in active_generators.keys()]
-		civ = self.choice(civs)
+		self.activate()
+		civ = self.choose_delegate()
 		delegate = GENERATORS[civ]
 		return delegate.generate(previous_name)
+
+	def choose_delegate(self):
+		active_generators = rcnGetDataValue("ACTIVE_GENERATORS") or {}
+		civs = [civ for civ in GENERATORS.keys() if civ not in active_generators.keys()]
+		if len(civs) == 0:
+			civs = [civ for civ in GENERATORS.keys() if civ != self.civ]
+		return self.choice(civs)
+
 
 AMERICAN_GENERATOR = AmericanGenerator("CIVILIZATION_AMERICA", AMERICAN_CITIES)
 ARABIAN_GENERATOR = Generator("CIVILIZATION_ARABIA", ARABIAN_CITIES)
