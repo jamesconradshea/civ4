@@ -77,8 +77,10 @@ class Generator(object):
 	def activate(self, civName):
 		self.civ = civName
 		active_generators = getDataValue("ACTIVE_GENERATORS") or {}
-		active_generators[self.civ] = True
-		setDataValue("ACTIVE_GENERATORS", active_generators)
+		maxActive = gc.getGame().countCivPlayersEverAlive()
+		if len(active_generators) < maxActive:
+			active_generators[self.civ] = True
+			setDataValue("ACTIVE_GENERATORS", active_generators)
 
 class ArabianGenerator(Generator):
 

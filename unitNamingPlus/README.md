@@ -7,7 +7,7 @@ for full terms.
 
 # Description
 
-**Unit Naming Plus 2.0**
+**Unit Naming Plus 2.0.1**
 
 This modcomp is a partial refactoring and enhancement of the unit
 naming code used in the BUG mod. I have been able to merge it
@@ -35,6 +35,9 @@ Features include:
 
 # Notes 
 
+* New in 2.0.1
+  * Fixed bug with privateer name generation.
+  * Prevent repeating chain behavior.
 * New in 2.0
   * When using the ^rc^ or ^nav^ unit naming convention, barbarian units, spies, and privateers will have their names
     taken from a randomly-chosen civ, an inactive one if possible. In the case of spies and privateers this is obviously
